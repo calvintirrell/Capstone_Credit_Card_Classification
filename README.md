@@ -16,10 +16,15 @@ The data set my project utilizes is from: https://archive.ics.uci.edu/ml/dataset
 
 The original form of the data set has columns and values that don't represent the information one might expect to see for credit card applications. 
 My research led me to find (https://nycdatascience.com/blog/student-works/credit-card-approval-analysis/) a useful resource for what the columns are. From there it was easier to figure out what the values of each column represent. The data won't change itself to be useful for modeling, so here's some of what I did:
+
 a) Fill in as much missing data as possible
+
 b) Rename columns to have useful names
+
 c) Columns like 'Gender' had 'a' or 'b'; changed those to be '1' or '0'
+
 d) Change 'Age' values from values like '34.57' to '34'
+
 e) Target column 'Approval' was '+' or '-', which changed to '1' or '0'
 
 ### 2) Feature Heatmaps and Model Building:
