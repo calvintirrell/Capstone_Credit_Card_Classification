@@ -1,5 +1,7 @@
 # Credit Card Classification
 
+Presentation: https://docs.google.com/presentation/d/1KAX45m0vJLl9hF3pMOYaTrom7tYX2pT7DlNWmYQPaZs/edit?usp=sharing
+
 ## Business Problem Summary:
 My project goal is try and shine some more light on the way credit card approval algorithms make their decision to approve or deny someone for a credit card.
 
