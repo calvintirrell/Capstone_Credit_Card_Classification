@@ -4,10 +4,10 @@
 
 ## Navigation
 
-### 1) 'data' folder contains the data set used. Link to the original is below.
-### 2) 'notebooks' folder contains the iterations of my project. 'capstone_v3' is the current latest version.
-### 3) 'visualizations' folder contains some saved visualizations from the 'capstone_v3' notebook.
-### 4) All other files are used internally for the project as a whole.
+1) 'data' folder contains the data set used. Link to the original is below.
+2) 'notebooks' folder contains the iterations of my project. 'capstone_v3' is the current latest version.
+3) 'visualizations' folder contains some saved visualizations from the 'capstone_v3' notebook.
+4) All other files are used internally for the project as a whole.
 
 ## Business Problem Summary:
 The project goal is try and replicate the way credit card approval algorithms make their decision to approve or deny someone for a credit card.
@@ -24,7 +24,7 @@ A best performing model has been selected and optimized as well as the top most 
 The project data set is provided by U.C. Irvine and was submitted anonymously. The data set itself has also been anonymized due to the possibility that this data is from an actual credit card company or bank. This is also partly why the data set is rather limited in size as well as how well the data can be used by computer models. [The UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/credit+approval)
 
 The original form of the data set has columns and values that don't represent the information one might expect to see for credit card applications. 
-Research led me to find [Data Science blog using R](https://nycdatascience.com/blog/student-works/credit-card-approval-analysis/) a useful resource for describing what the columns are. From there it is easier to figure out what the values of each column represent. Some steps taken to convert the data to be usable in modeling include:
+Research led me to find this [data science blog using R](https://nycdatascience.com/blog/student-works/credit-card-approval-analysis/), which is a useful resource for describing what the columns are. From there it is easier to figure out what the values of each column represent. Some steps taken to convert the data to be usable in modeling include:
 
 a) Fill in as much missing data as possible
 
