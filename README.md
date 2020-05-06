@@ -9,8 +9,10 @@
 3) 'visualizations' folder contains some saved visualizations from the 'final_notebook' notebook.
 4) All other files are used internally for the project as a whole.
 
+[Flask web app for this project is here.](https://github.com/calvintirrell/capstone-flask-app-template-012720)
+
 ## Business Problem Summary:
-The project goal is to try and replicate the way credit card approval algorithms make their decision to approve or deny someone for a credit card. My project is three fold:
+The project goal is to try and replicate the way credit card approval algorithms make their decision to approve or deny someone for a credit card. The project is three fold:
 
 1) Train a computer model to simulate a credit card application algorithm
 
@@ -25,7 +27,7 @@ A best performing model has been selected and optimized as well as the top most 
 ## Overview of Process:
 
 ### 1) Data Collection and Processing:
-The project data set is provided by U.C. Irvine and was submitted anonymously. The data set itself has also been anonymized due to the possibility that this data is from an actual credit card company or bank. This is also partly why the data set is rather limited in size as well and how well the data can be used by computer models without further manipulation. [The UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/credit+approval)
+The project data set is provided by U.C. Irvine and was submitted anonymously. The data set itself has also been anonymized due to the possibility that this data is from an actual credit card company or bank. This is also partly why the data set is  limited in size and how well the data can be used by computer models without further manipulation. [The UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/credit+approval)
 
 The original form of the data set has columns and values that don't represent the information one might expect to see for credit card applications. Research led me to find this [data science blog using R](https://nycdatascience.com/blog/student-works/credit-card-approval-analysis/), which is a useful resource for describing what the columns are. From there it is easier to figure out what most of the values of each column represent. Some steps taken to convert the data to be usable in modeling include:
 
@@ -45,6 +47,6 @@ Before building various models to test the data with, using heatmaps to see whic
 Initial models tested were: Logistic Regression, KNeighbors, Random Forest, Support Vector Machine, XGBoost, Multi-Layer Perceptron, AdaBoost, GaussianNB, GaussianProcess, QuadraticDiscriminant and GradientBoost. From there the selected was narrowed down to Logistic Regression, Random Forest, XGBoost, AdaBoost and GradientBoost simply based on these models having the best accuracy scores and overall results in their respective confusion matrices and classification reports. These models then had feature importances and coefficients (Logistic Regression) visualized. The final two top models are Logistic Regression and Random Forest, with Random Forest being the final choice.
 
 ### 3) Model Evaluation
-Lastly, by utilizing GridSearchCV the final two models can be cross validated to really evaluate the performance of each. Logistic Regression currently has a 10 fold cross validated accuracy score of 86.14% and the Random Forest model has 88.61%. In terms of confusion matrices and classification report results, these two models are fairly close but the Random Forest model has overall better results.
+Lastly, by utilizing GridSearchCV the final two models can be cross validated to really evaluate the performance of each. Logistic Regression currently has a 10 fold cross validated accuracy score of 86.14% and the Random Forest model has 88.61%. The Random Forest model also has an F1 score of 86.85% compared to the 84.78% that Logistic Regression received. In terms of confusion matrices and classification report results, these two models are fairly close but the Random Forest model has overall better results and is the final chosen model.
 
-For example, the confusion matrix for Logistic Regression has a larger number for False Positives. In the case of credit card applications, this means that the Logistic Regression model predicted application approvals but these should actually be application denials. This could be costly to a company because a company wouldn't want to approve someone who isn't supposed to be approved. One scenario could be that a specific applicant from this grouping could be considered a financial risk due to having a defaulted loan and/or a bad credit score.
+The confusion matrix for Logistic Regression has a larger number for False Positives. In the case of credit card applications, this means that the Logistic Regression model predicted application approvals that should actually be application denials. This is important so consumers don't apply for a credit card they won't be approved for and thus not hurting their credit score and not receving a credit card. Overall, the Random Forest model is better at accurately identifying applicants who will not be approved.
