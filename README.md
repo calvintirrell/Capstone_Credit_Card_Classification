@@ -26,7 +26,18 @@ A best performing model has been selected and optimized as well as the top most 
 
 ## Overview of Process:
 
-### 1) Data Collection and Processing:
+### 1) Create the Environment
+a) Use the file: `environment.yml`
+
+b) Type the following: `conda env create -f environment.yml`
+
+c) Activate the environment: `conda activate environment`
+
+d) Verify the environment: `conda env list` OR `conda info --envs`
+
+e) [Additional resource for using or creating a yml file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+
+### 2) Data Collection and Processing:
 The project data set is provided by U.C. Irvine and was submitted anonymously. The data set itself has also been anonymized due to the possibility that this data is from an actual credit card company or bank. This is also partly why the data set is  limited in size and how well the data can be used by computer models without further manipulation. [The UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/credit+approval)
 
 The original form of the data set has columns and values that don't represent the information one might expect to see for credit card applications. Research led me to find this [data science blog using R](https://nycdatascience.com/blog/student-works/credit-card-approval-analysis/), which is a useful resource for describing what the columns are. From there it is easier to figure out what most of the values of each column represent. Some steps taken to convert the data to be usable in modeling include:
@@ -41,12 +52,21 @@ d) Change 'Age' values from values like '34.57' to '34'
 
 e) Target column 'Approval' was '+' or '-', which changed to '1' or '0'
 
-### 2) Feature Heatmaps and Model Building:
+### 3) Feature Heatmaps and Model Building:
 Before building various models to test the data with, using heatmaps to see which columns might be strongly correlated to the target 'Approval' column helps with the initial exploratory data analysis (EDA). While this doesn't impact initial modeling, it does start to help give a sense of what information might realistically be used (more heavily than others) in real world credit card application decision models. Some columns that stood out on the heatmaps were: 'Debt', 'YearsWorked', 'PriorDefault', 'Employed', 'CreditScore' and 'Income'. 'BankClient' and 'Married' had a very strong connection which was unexpected.
 
 Initial models tested were: Logistic Regression, KNeighbors, Random Forest, Support Vector Machine, XGBoost, Multi-Layer Perceptron, AdaBoost, GaussianNB, GaussianProcess, QuadraticDiscriminant and GradientBoost. From there the selected was narrowed down to Logistic Regression, Random Forest, XGBoost, AdaBoost and GradientBoost simply based on these models having the best accuracy scores and overall results in their respective confusion matrices and classification reports. These models then had feature importances and coefficients (Logistic Regression) visualized. The final two top models are Logistic Regression and Random Forest, with Random Forest being the final choice.
 
-### 3) Model Evaluation
+### 4) Model Evaluation
 Lastly, by utilizing GridSearchCV the final two models can be cross validated to really evaluate the performance of each. Logistic Regression currently has a 10 fold cross validated accuracy score of 86.14% and the Random Forest model has 88.61%. The Random Forest model also has an F1 score of 86.85% compared to the 84.78% that Logistic Regression received. In terms of confusion matrices and classification report results, these two models are fairly close but the Random Forest model has overall better results and is the final chosen model.
 
 The confusion matrix for Logistic Regression has a larger number for False Positives. In the case of credit card applications, this means that the Logistic Regression model predicted application approvals that should actually be application denials. This is important so consumers don't apply for a credit card they won't be approved for and thus not hurting their credit score and not receving a credit card. Overall, the Random Forest model is better at accurately identifying applicants who will not be approved.
+
+### Future Improvements
+My main focuses for future improvements are as follows:
+
+- Feature engineering - closer look at the data, what data is useful or could become useful
+
+- Bigger and/or better defined data set - likely would have impact on training models
+
+- Additional optimization of current models as well as trying out additional models
