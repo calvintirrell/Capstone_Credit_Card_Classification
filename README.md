@@ -1,5 +1,7 @@
 # Credit Card Classification
 
+[Live demo of my model](http://3.21.240.59/static/index.html)
+
 [Presentation](https://docs.google.com/presentation/d/1KAX45m0vJLl9hF3pMOYaTrom7tYX2pT7DlNWmYQPaZs/edit?usp=sharing)
 
 ## Navigation
