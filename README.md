@@ -1,6 +1,8 @@
 # Credit Card Classification
 
-[AWS deployed demo of model](http://3.21.240.59/static/index.html)
+[Video of the AWS deployed demo web app](https://www.youtube.com/watch?v=S3i4sD60yjc)
+
+I had to take down the actual link to the web app due to nearly reaching the free AWS trial limit.
 
 [Presentation](https://docs.google.com/presentation/d/1KAX45m0vJLl9hF3pMOYaTrom7tYX2pT7DlNWmYQPaZs/edit?usp=sharing)
 
